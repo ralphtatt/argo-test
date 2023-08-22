@@ -12,8 +12,8 @@ spec:
   project: default
   source:
     path: apps/app-2
-    repoURL: git@github.com:ralphtatt/argo-test.git
+    repoURL: 'https://github.com/ralphtatt/argo-test.git'
     targetRevision: HEAD
-  helm:
-    valueFiles:
-      - {{ .Values.environment }}.yaml
+    helm:
+      valueFiles:
+        - {{ .Values.environment }}.yaml

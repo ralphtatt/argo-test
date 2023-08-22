@@ -8,7 +8,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: argo-cd/
-    repoURL: 'git@github.com:ralphtatt/argo-test.git'
+    repoURL: 'https://github.com/ralphtatt/argo-test.git'
     targetRevision: HEAD
     helm:
       valuesObject:
