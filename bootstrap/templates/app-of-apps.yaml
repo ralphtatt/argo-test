@@ -12,7 +12,7 @@ spec:
     targetRevision: HEAD
     helm:
       valuesObject:
-        environment: dev
+        environment: {{ .Values.environment }}
   project: default
   syncPolicy:
     automated:
