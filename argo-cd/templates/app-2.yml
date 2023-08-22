@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-{{ .Values.environment }}-2
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: nginx
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: apps/app-2
+    repoURL: git@github.com:ralphtatt/argo-test.git
+    targetRevision: HEAD
+  helm:
+    valueFiles:
+      - {{ .Values.environment }}.yaml
