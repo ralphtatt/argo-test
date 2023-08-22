@@ -14,6 +14,6 @@ spec:
     path: apps/app-1
     repoURL: git@github.com:ralphtatt/argo-test.git
     targetRevision: HEAD
-  helm:
-    valueFiles:
-      - {{ .Values.environment }}.yaml
+    helm:
+      valueFiles:
+        - {{ .Values.environment }}.yaml

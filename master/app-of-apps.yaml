@@ -10,9 +10,9 @@ spec:
     path: argo-cd/
     repoURL: 'git@github.com:ralphtatt/argo-test.git'
     targetRevision: HEAD
-  helm:
-    valuesObject:
-      environment: dev
+    helm:
+      valuesObject:
+        environment: dev
   project: default
   syncPolicy:
     automated:
