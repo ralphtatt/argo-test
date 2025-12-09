@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://charts.jenkins.io
-    chart: jenkinsci
+    chart: jenkins
     targetRevision: "latest"
     helm:
       values: |-
