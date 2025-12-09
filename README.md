@@ -72,6 +72,6 @@ The `argo-cd` application definition pass the environment variable to the applic
 
 ## Making Changes
 
-Now if you were to make changes to the `app/` or `argo-cd/` directories, they should be automatically updated in ArgoCD. Even adding a new Application manifest. 
+Now if you were to make changes to the `app/` or `argo-cd/` directories, they should be automatically updated in ArgoCD. Even adding a new Application manifest.
 
 You could try adding one for Grafana, or a third copy of the `apps/local-app/` chart. Or deleteing one of them.
