@@ -1,19 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-{{ .Values.environment }}-2
+  name: uat-ngingx
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: nginx
+    namespace: dev-nginx
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: apps/app-2
+    path: apps/local-app
     repoURL: 'https://github.com/ralphtatt/argo-test.git'
     targetRevision: HEAD
     helm:
       valueFiles:
-        - {{ .Values.environment }}.yaml
+        - uat.yaml
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
