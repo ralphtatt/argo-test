@@ -12,8 +12,9 @@ spec:
     helm:
       values: |-
         controller:
-          adminUser: admin
-          adminPassword: admin
+          admin:
+            username: admin
+            password: admin
           serviceType: ClusterIP
           replicaCount: 1
           resources:
