@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dev-nginx
+  name: app-1-nginx
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: dev-nginx
+    namespace: app-1
     server: https://kubernetes.default.svc
   project: default
   source:
@@ -16,7 +16,7 @@ spec:
     targetRevision: {{ .Values.targetRevision }}
     helm:
       valueFiles:
-        - dev.yaml
+        - app-1.yaml
   syncPolicy:
     automated:
       prune: true

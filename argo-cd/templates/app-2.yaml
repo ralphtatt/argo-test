@@ -1,26 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: uat-ngingx
+  name: app-2-nginx
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: dev-nginx
+    namespace: app-2
     server: https://kubernetes.default.svc
   project: default
   source:
     path: apps/local-app
     repoURL: {{ .Values.repoURL }}
     targetRevision: {{ .Values.targetRevision }}
+    # Using valueObject to pass a single object as values, instead of a values file
     helm:
-      valueFiles:
-        - uat.yaml
+      valueObject:
+        name: app-2
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-
