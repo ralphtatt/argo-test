@@ -11,7 +11,7 @@ spec:
     targetRevision: "*"
     helm:
       values: |-
-        master:
+        controller:
           adminUser: admin
           adminPassword: admin
           serviceType: ClusterIP
