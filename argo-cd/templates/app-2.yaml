@@ -14,9 +14,9 @@ spec:
     path: apps/local-app
     repoURL: {{ .Values.repoURL }}
     targetRevision: {{ .Values.targetRevision }}
-    # Using valueObject to pass a single object as values, instead of a values file
+    # Using values to pass a single object, instead of a values file reference
     helm:
-      valueObject:
+      values: |
         name: app-2
   syncPolicy:
     automated:
