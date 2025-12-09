@@ -8,11 +8,8 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: argo-cd/
-    repoURL: 'https://github.com/ralphtatt/argo-test.git'
-    targetRevision: HEAD
-    helm:
-      valuesObject:
-        environment: {{ .Values.environment }}
+    repoURL: {{ .Values.repoURL }}
+    targetRevision: {{ .Values.targetRevision }}
   project: default
   syncPolicy:
     automated:

@@ -12,8 +12,8 @@ spec:
   project: default
   source:
     path: apps/local-app
-    repoURL: 'https://github.com/ralphtatt/argo-test.git'
-    targetRevision: HEAD
+    repoURL: {{ .Values.repoURL }}
+    targetRevision: {{ .Values.targetRevision }}
     helm:
       valueFiles:
         - uat.yaml
