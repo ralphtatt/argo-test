@@ -18,6 +18,8 @@ spec:
         ui:
           enabled: true
           serviceType: "NodePort"
+        injector:
+          enabled: false
   destination:
     server: https://kubernetes.default.svc
     namespace: vault
