@@ -10,6 +10,10 @@ spec:
     path: argo-cd/
     repoURL: {{ .Values.repoURL }}
     targetRevision: {{ .Values.targetRevision }}
+    helm:
+      valuesObject:
+        repoURL: {{ .Values.repoURL }}
+        targetRevision: {{ .Values.targetRevision }}
   project: default
   syncPolicy:
     automated:
