@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.bitnami.com/bitnami
-    chart: jenkins
+    repoURL: https://charts.jenkins.io
+    chart: jenkinsci
     targetRevision: "latest"
     helm:
       values: |-
