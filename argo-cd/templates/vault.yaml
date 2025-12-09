@@ -8,7 +8,16 @@ spec:
   source:
     repoURL: https://helm.releases.hashicorp.com
     chart: vault
-    targetRevision: "*"
+    targetRevision: "*"  # Use specific version
+    helm:
+      values: |
+        server:
+          dev:
+            enabled: true
+            devRootToken: "root"
+        ui:
+          enabled: true
+          serviceType: "NodePort"
   destination:
     server: https://kubernetes.default.svc
     namespace: vault
