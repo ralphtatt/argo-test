@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://charts.jenkins.io
     chart: jenkins
-    targetRevision: "latest"
+    targetRevision: "*"
     helm:
       values: |-
         master:
